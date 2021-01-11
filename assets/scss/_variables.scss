@@ -1,0 +1,35 @@
+// Primary Colors
+$blue: #004E9B;
+$red: #E01C2F;
+$dark-red: #940B18;
+$black: #0C1630;
+$dark: #0C0C30;
+$light-gray: #657485;
+$light-grey: #ECECEC;
+$white: #fff;
+
+$blue--shadow: rgba(0, 78, 155, 0.32);
+$dark--shadow: rgba($dark, .6);
+$red--shadow: rgba(224, 28, 47, 0.32);
+$white--shadow: rgba(255, 255, 255, 0.32);
+
+// Font 
+$font-text: 'Roboto', sans-serif;
+$font-heading: 'Roboto Condensed', sans-serif;
+
+// Media query breakpoints
+$breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      576px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "tablet-wide":  992px,
+    "desktop":      1200px,
+    "desktop-wide": 1440px
+);
+
+// Z-index
+$z-page_scroller: 8;
+$z-flyup: 9;
+$z-header: 10;

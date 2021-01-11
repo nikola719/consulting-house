@@ -1,0 +1,89 @@
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @if $type == max {
+          $width: $width - 1px;
+      }
+      @media only screen and (#{$type}-width: $width) {
+          @content;
+      }
+  }
+}
+
+@mixin heading() {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@mixin heading1() {
+  @include heading();
+  font-size: 56px;
+  @include mq('tablet') {
+    font-size: 48px;
+  }
+  @include mq('phablet') {
+    font-size: 32px;
+  }
+}
+@mixin heading3() {
+  @include heading();
+  font-size: 48px;
+  @include mq('tablet') {
+    font-size: 40px;
+  }
+  @include mq('phablet') {
+    font-size: 28px;
+  }
+}
+@mixin heading4() {
+  @include heading();
+  font-size: 32px;
+  @include mq('tablet') {
+    font-size: 28px;
+  }
+  @include mq('phablet') {
+    font-size: 20px;
+  }
+}
+@mixin heading5() {
+  @include heading();
+  font-size: 28px;  
+  @include mq('tablet') {
+    font-size: 20px;
+  }
+  @include mq('phablet') {
+    font-size: 18px;
+  }
+}
+@mixin bodyText($size) {
+  font-family: $font-text;
+  @if $size == large {
+    font-size: 18px;
+    line-height: 1.4;
+    @include mq('tablet') {
+      font-size: 16px;
+    }
+    @include mq('phablet') {
+      font-size: 14px;
+    }
+  }
+  @else if $size == small {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+
+@mixin pseudo($width, $height, $top, $left, $origin:0) {
+  position: absolute;
+  content: '';
+  width: $width;
+  height: $height;
+  top: $top;
+  left: $left;
+  pointer-events: none;
+  @if $origin == center {
+    transform: translate(-50%, -50%);
+  }
+}
